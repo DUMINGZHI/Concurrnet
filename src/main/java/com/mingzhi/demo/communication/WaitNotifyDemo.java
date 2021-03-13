@@ -2,7 +2,8 @@ package com.mingzhi.demo.communication;
 
 /**
  * wait/notify/notifyAll的例子: 一个线程受到另一个线程状态改变的影响
- * 注意事项：wait和notify都要使用synchronized锁住
+ * 注意事项： 1.wait和notify都要使用synchronized锁住
+ *          2.wait会释放当前对象持有的锁
  */
 public class WaitNotifyDemo {
 
