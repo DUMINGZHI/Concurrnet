@@ -8,11 +8,18 @@ public class SyncSceneDemo {
     // 修饰普通方法：锁住这个实例
     private synchronized void scene1(){
         System.out.println(Thread.currentThread().getName());
+        //测试synchronized的重入性 -> 同一个对象2个同步方法成功运行
+        //scene1_1();
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    // 测试synchronized的重入性
+    private synchronized void scene1_1(){
+        System.out.println(Thread.currentThread().getName()+ "重入性测试ok");
     }
 
     // 修饰静态方法：锁住整个类的所有实例
@@ -39,7 +46,7 @@ public class SyncSceneDemo {
         }
     }
     public static void main(String[] args) {
-        //test1();
+        test1();
         //test2();
         //test3();
     }
